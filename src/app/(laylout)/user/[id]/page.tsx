@@ -1,10 +1,9 @@
 import UserDetails from '@/components/user-detail/UserDetails';
 import React from 'react'
 
-const UserDetail  = async ({params}: {params: {id: string}}) => {
-    const id = params.id
+const UserDetail  = async ({params}: {params: {id: string}}) => { 
 
-    const data = await fetch(`https://dummyjson.com/users/${id}`, { cache: "force-cache" });
+    const data = await fetch(`https://dummyjson.com/users/${params.id}`, { cache: "force-cache" });
     const user = await data.json();
   return (
     <div>
