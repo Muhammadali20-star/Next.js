@@ -1,7 +1,7 @@
 import PostDetails from '@/components/post.detail/PostDetails';
 import React from 'react'
 
-const PostDetail = async ({params}: {params: {id: string}}) => {
+const PostDetail = async ({params}: {params: {id: IPost}}) => {
     const id =  params.id 
 
     const data = await fetch(`https://dummyjson.com/posts/${id}`, { cache: "force-cache" });
