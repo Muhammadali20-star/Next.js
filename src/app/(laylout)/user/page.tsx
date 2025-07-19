@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const UserPage = async () => {
-  const data = await fetch("https://dummyjson.com/users?limit=12", { cache: "no-store" });
+  const data = await fetch("https://dummyjson.com/users?limit=12", { cache: "force-cache" });
   const users = await data.json();
   return (
     <div>

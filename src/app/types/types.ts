@@ -8,6 +8,10 @@ interface IUsers {
     id: number,
     firstName: string,
     lastName: string,
+    gender: string
+    company: any
+    address: any
+    age: number
     email: string
     image: string
 }

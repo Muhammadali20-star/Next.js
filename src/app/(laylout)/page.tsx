@@ -1,5 +1,5 @@
-import Products from "@/components/products/Products";
 import { Metadata } from "next";
+import Product from "./product/page";
 
 export const metadata: Metadata = {
   title: "Home page",
@@ -7,13 +7,11 @@ export const metadata: Metadata = {
 };
 
 export default async function  Home() {
-  const data = await fetch("https://dummyjson.com/products?limit=12", { cache: "no-store" });
-  const products = await data.json();
-  console.log(products);
+  
   
   return (
     <div>
-      <Products data={products}/>
+      <Product/>
     </div>
   );
 }
