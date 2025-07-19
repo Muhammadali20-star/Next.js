@@ -1,16 +1,15 @@
 import UserDetails from '@/components/user-detail/UserDetails';
-import React from 'react'
+import React from 'react';
 
-const UserDetail  = async ({params}: {params: {id: string}}) => {
-    const id = params.id
+const UserDetail = async ({ params }: { params: { id: string } }) => {
+  const res = await fetch(`https://dummyjson.com/users/${params.id}`, { cache: "force-cache" });
+  const user: IUsers = await res.json();
 
-    const data = await fetch(`https://dummyjson.com/users/${id}`, { cache: "force-cache" });
-    const user = await data.json();
   return (
-    <div>
-        <UserDetails data={user}/>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex items-center justify-center">
+      <UserDetails data={user} />
     </div>
-  )
-}
+  );
+};
 
-export default UserDetail
+export default UserDetail;
