@@ -1,15 +1,16 @@
 import RecipeDetails from '@/components/recipe-detail/RecipeDetails';
-import React from 'react';
+import React from 'react'
 
-const RecipeDetail = async ({ params }: { params: { id: string } }) => {
-  const res = await fetch(`https://dummyjson.com/recipes/${params.id}`, { cache: "force-cache" });
-  const recipe = await res.json();
+const RecipeDetail = async ({params}: {params: {id: string}}) => {
+    const id =  params.id 
 
+    const data = await fetch(`https://dummyjson.com/recipes/${id}`, { cache: "force-cache" });
+    const recipe = await data.json();
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex items-center justify-center">
-      <RecipeDetails data={recipe} />
+    <div>
+        <RecipeDetails data={recipe}/>
     </div>
-  );
-};
+  )
+}
 
-export default RecipeDetail;
+export default RecipeDetail
